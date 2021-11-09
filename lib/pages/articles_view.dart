@@ -1,3 +1,5 @@
+//De aqui se manda a llamar el webviwe para las paginas
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -23,7 +25,7 @@ class _ArticleViewState extends State<ArticleView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "NOTICIAS AL MOMENTO",
+              "NOTI",
               style: TextStyle(
                   color: Colors.blueGrey, fontWeight: FontWeight.w600),
             ),

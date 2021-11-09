@@ -7,7 +7,7 @@ Widget MyAppBar() {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          "NOTICIAS AL MOMENTO",
+          "NOTI",
           style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.w600),
         ),
         Text(
@@ -47,46 +47,50 @@ class NewsTile extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 24),
             width: MediaQuery.of(context).size.width,
             child: SingleChildScrollView(
-              child: Container(
+              child: SingleChildScrollView(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  alignment: Alignment.bottomCenter,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(6),
-                          bottomLeft: Radius.circular(6))),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(6),
-                          child: Image.network(
-                            imgUrl,
-                            height: 200,
-                            width: MediaQuery.of(context).size.width,
-                            fit: BoxFit.cover,
-                          )),
-                      SizedBox(
-                        height: 12,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      alignment: Alignment.bottomCenter,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(6),
+                              bottomLeft: Radius.circular(6))),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(6),
+                              child: Image.network(
+                                imgUrl,
+                                height: 200,
+                                width: MediaQuery.of(context).size.width,
+                                fit: BoxFit.cover,
+                              )),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          Text(
+                            title,
+                            maxLines: 2,
+                            style: TextStyle(
+                                color: Colors.cyan[900],
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text(
+                            desc,
+                            maxLines: 2,
+                            style: TextStyle(color: Colors.black54, fontSize: 14),
+                          )
+                        ],
                       ),
-                      Text(
-                        title,
-                        maxLines: 2,
-                        style: TextStyle(
-                            color: Colors.cyan[900],
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Text(
-                        desc,
-                        maxLines: 2,
-                        style: TextStyle(color: Colors.black54, fontSize: 14),
-                      )
-                    ],
+                    ),
                   ),
                 ),
               ),

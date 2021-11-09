@@ -39,7 +39,7 @@ class _CategoryNewsState extends State<CategoryNews> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "NOTICIAS AL MOMENTO",
+              "NOTI",
               style: TextStyle(
                   color: Colors.blueGrey, fontWeight: FontWeight.w600),
             ),
@@ -69,21 +69,23 @@ class _CategoryNewsState extends State<CategoryNews> {
           : SingleChildScrollView(
               child: Container(
                 child: SingleChildScrollView(
-                  child: Container(
-                    margin: EdgeInsets.only(top: 16),
-                    child: ListView.builder(
-                        itemCount: newslist.length,
-                        shrinkWrap: true,
-                        physics: ClampingScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return NewsTile(
-                            imgUrl: newslist[index].urlToImage ?? "",
-                            title: newslist[index].title ?? "",
-                            desc: newslist[index].description ?? "",
-                            content: newslist[index].content ?? "",
-                            posturl: newslist[index].articleUrl ?? "",
-                          );
-                        }),
+                  child: Flexible(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 16),
+                      child: ListView.builder(
+                          itemCount: newslist.length,
+                          shrinkWrap: true,
+                          physics: ClampingScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return NewsTile(
+                              imgUrl: newslist[index].urlToImage ?? "",
+                              title: newslist[index].title ?? "",
+                              desc: newslist[index].description ?? "",
+                              content: newslist[index].content ?? "",
+                              posturl: newslist[index].articleUrl ?? "",
+                            );
+                          }),
+                    ),
                   ),
                 ),
               ),
